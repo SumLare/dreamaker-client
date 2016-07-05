@@ -1,0 +1,17 @@
+<md-content class="md-padding" layout="row" layout-wrap layout-align="center start">
+  <div flex="50" flex-xs="100" layout="column">
+    <md-toolbar color="primary">
+      <h3>Мои цели</h3>
+    </md-toolbar>
+   <md-card *ngFor="let goal of goals" (click)="onSelect(goal)">
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">{{goal.name}}</span>
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content>
+        <p>Будет достигнута {{goal.finish_date | date:"MM/dd/yy"}}</p>
+      </md-card-content>
+    </md-card>
+  </div>
+</md-content>
