@@ -60,7 +60,7 @@ export class GoalService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    let url = `${this.goalsUrl}/${goal.id}`;
+    let url = `${this.goalsUrl}/${goal._id}`;
 
     return this.http
                .put(url, JSON.stringify(goal), {headers: headers})
@@ -73,11 +73,11 @@ export class GoalService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    let url = `${this.goalsUrl}/${goal.id}`;
+    let url = `${this.goalsUrl}/${goal._id}`;
 
     return this.http
                .delete(url, headers)
                .toPromise()
-               .catch(this.handleError)
+               .catch(this.handleError);
   }
 }
