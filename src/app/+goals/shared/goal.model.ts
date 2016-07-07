@@ -1,5 +1,6 @@
 export class Goal {
+  _id: string;
   id: number;
   name: string;
-  finish_date: Date;
+  completed_date: Date;
 }
