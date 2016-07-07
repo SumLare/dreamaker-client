@@ -1,6 +1,6 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
-import { provideForms } from '@angular/forms';
+import { disableDeprecatedForms, provideForms } from '@angular/forms';
 import { APP_ROUTER_PROVIDERS } from './app/app.routes';
 
 import { AppComponent, environment } from './app/';
@@ -10,5 +10,7 @@ if (environment.production) {
 }
 
 bootstrap(AppComponent, [
-  provideForms(), APP_ROUTER_PROVIDERS
+  disableDeprecatedForms(),
+  provideForms(),
+  APP_ROUTER_PROVIDERS
 ])
