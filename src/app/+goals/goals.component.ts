@@ -42,5 +42,15 @@ export class GoalsComponent implements OnInit {
 
   onSelect(goal: Goal) {
     this.router.navigate(['/goal', goal.id]);
+    event.preventDefault();
+  }
+
+  delete(goal: Goal){
+    this.goalService.delete(goal).catch(error =>  this.errorMessage = <any>error);
+    this.removeFromList(goal);
+  }
+
+  removeFromList(goal: Goal) {
+    this.goals.splice(this.goals.indexOf(goal), 1);
   }
 }
